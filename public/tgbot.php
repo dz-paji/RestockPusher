@@ -117,6 +117,7 @@ if (isset($_POST["method"]) && $_POST["method"] == "send"){
 	$data = [];
 	$data["chat_id"] = authcode($_POST["sckey"]);
 	$data["text"] = $_POST["content"];
+	$data[parse_mode] = "Markdown";
 	sendmessage($data);
 	return;
 }
